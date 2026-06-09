@@ -1,0 +1,364 @@
+@charset "utf-8";
+/* CSS Document - CPCE Calendar 2026 */
+
+body {
+	font-family: 微軟正黑體, "Microsoft JhengHei", Arial, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+
+a {
+	color: rgb(0, 0, 0);
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+/* Accessibility: visible focus outline */
+a:focus,
+div[role="button"]:focus,
+.month:focus {
+	outline: 3px solid #005fcc;
+	outline-offset: 2px;
+}
+
+img {
+	display: block;
+	width: 1000px;
+	height: 748px;
+}
+
+img:hover {
+	background: none;
+	background-color: transparent;
+}
+
+.container {
+	width: 1000px;
+	height: 748px;
+	position: relative;
+	margin: 0 auto;
+}
+
+/* ===== Top Navigation Buttons ===== */
+.button_common {
+	width: 128px;
+	height: 50px;
+	position: absolute;
+	cursor: pointer;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-o-border-radius: 15px;
+	font-size: 1em;
+}
+
+.button_common:hover {
+	background-color: #e0e0e0 !important;
+}
+
+.button_index {
+	top: 38px;
+	left: 475px;
+	background-color: white;
+}
+
+.button_card {
+	top: 38px;
+	left: 615px;
+	background-color: white;
+}
+
+.button_stand {
+	top: 38px;
+	left: 755px;
+	background-color: white;
+}
+
+/* ===== Font Resize Buttons (3A Accessibility) ===== */
+.button_resize {
+	top: 39px;
+	left: 909px;
+	width: 70px;
+	height: 50px;
+	position: absolute;
+	cursor: pointer;
+	text-align: left;
+	line-height: 50px;
+	font-size: 10px;
+}
+
+.button_resize a {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 2px 3px;
+	border-radius: 3px;
+	line-height: 1;
+}
+
+.button_resize a:hover {
+	background-color: #e0e0e0;
+}
+
+.button_resize_100 {
+	font-size: 12px;
+}
+
+.button_resize_150 {
+	font-size: 17px;
+}
+
+.button_resize_200 {
+	font-size: 24px;
+}
+
+/* ===== Month Navigation Buttons ===== */
+/* 
+ * The month buttons use the calendar image's built-in button strip.
+ * Each button is a transparent hotspot overlaid on the image.
+ * On hover/focus, the button_white.webp sprite is shown.
+ * The button_white.webp is 2048x1531px, displayed at 1000x748px.
+ */
+.month {
+	width: 55px;
+	height: 60px;
+	line-height: 60px;
+	top: 688.5px;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+.month:hover,
+.month:focus {
+	background-image: url(img/button_white.webp);
+	background-size: 1000px 748px;
+}
+
+/* Month button left positions (matching pixel analysis of button_white.webp) */
+.month_01 {
+	left: 8px;
+}
+.month_01:hover, .month_01:focus {
+	background-position: -8px -688.4px;
+}
+
+.month_02 {
+	left: 68px;
+}
+.month_02:hover, .month_02:focus {
+	background-position: -68px -688.4px;
+}
+
+.month_03 {
+	left: 124px;
+}
+.month_03:hover, .month_03:focus {
+	background-position: -124px -688.4px;
+}
+
+.month_04 {
+	left: 181px;
+}
+.month_04:hover, .month_04:focus {
+	background-position: -181px -688.4px;
+}
+
+.month_05 {
+	left: 240px;
+}
+.month_05:hover, .month_05:focus {
+	background-position: -240px -688.4px;
+}
+
+.month_06 {
+	left: 299px;
+}
+.month_06:hover, .month_06:focus {
+	background-position: -299px -688.4px;
+}
+
+.month_07 {
+	left: 355px;
+}
+.month_07:hover, .month_07:focus {
+	background-position: -355px -688.4px;
+}
+
+.month_08 {
+	left: 413.5px;
+}
+.month_08:hover, .month_08:focus {
+	background-position: -413.5px -688.4px;
+}
+
+.month_09 {
+	left: 471.5px;
+}
+.month_09:hover, .month_09:focus {
+	background-position: -471.5px -688.4px;
+}
+
+.month_10 {
+	left: 530px;
+}
+.month_10:hover, .month_10:focus {
+	background-position: -530px -688.4px;
+}
+
+.month_11 {
+	left: 588px;
+}
+.month_11:hover, .month_11:focus {
+	background-position: -588px -688.4px;
+}
+
+.month_12 {
+	left: 646px;
+}
+.month_12:hover, .month_12:focus {
+	background-position: -646px -688.4px;
+}
+
+/* Active month - always show highlight */
+.month_active {
+	background-image: url(img/button_white.webp) !important;
+	background-size: 1000px 748px !important;
+}
+
+.month_01.month_active { background-position: -8px -688.4px !important; }
+.month_02.month_active { background-position: -68px -688.4px !important; }
+.month_03.month_active { background-position: -124px -688.4px !important; }
+.month_04.month_active { background-position: -181px -688.4px !important; }
+.month_05.month_active { background-position: -240px -688.4px !important; }
+.month_06.month_active { background-position: -299px -688.4px !important; }
+.month_07.month_active { background-position: -355px -688.4px !important; }
+.month_08.month_active { background-position: -413.5px -688.4px !important; }
+.month_09.month_active { background-position: -471.5px -688.4px !important; }
+.month_10.month_active { background-position: -530px -688.4px !important; }
+.month_11.month_active { background-position: -588px -688.4px !important; }
+.month_12.month_active { background-position: -646px -688.4px !important; }
+
+/* ===== Cover Page Links ===== */
+.hab_cover {
+	width: 265px;
+	height: 60px;
+	top: 690px;
+	left: 720px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+.cpce_cover {
+	width: 250px;
+	height: 60px;
+	top: 688px;
+	left: 20px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+/* ===== Prologue Page Links ===== */
+.cpce_website_prologue {
+	width: 160px;
+	height: 30px;
+	top: 355px;
+	left: 550px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+.cpce_facebook_prologue {
+	width: 230px;
+	height: 35px;
+	top: 320px;
+	left: 440px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+.cpce_instagram_prologue {
+	width: 130px;
+	height: 35px;
+	top: 320px;
+	left: 690px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+.hyab_month {
+	width: 520px;
+	height: 110px;
+	top: 450px;
+	left: 150px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+.cpce_month {
+	width: 360px;
+	height: 80px;
+	top: 600px;
+	left: 310px;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+	background: url(img/empty.png);
+}
+
+/* ===== Skip Navigation (Accessibility) ===== */
+.skip-nav {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #005fcc;
+	color: white;
+	padding: 8px 16px;
+	text-decoration: none;
+	z-index: 100;
+	font-size: 14px;
+	border-radius: 0 0 4px 0;
+}
+
+.skip-nav:focus {
+	top: 0;
+	outline: 3px solid #ffcc00;
+}
+
+/* ===== Visually Hidden (Screen Reader Only) ===== */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
